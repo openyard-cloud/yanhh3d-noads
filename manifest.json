@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "YanHH3D No Ads",
+  "version": "2.0.0",
+  "description": "Chặn quảng cáo mở tab, tự chuyển trang và banner trên YanHH3D, ở mọi tên miền của trang.",
+  "permissions": ["declarativeNetRequest", "scripting", "storage", "webNavigation"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "declarative_net_request": {
+    "rule_resources": [{ "id": "ads", "enabled": true, "path": "rules.json" }]
+  },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["guard.js"], "run_at": "document_start", "world": "MAIN" },
+    { "matches": ["<all_urls>"], "js": ["detect.js"], "run_at": "document_idle" }
+  ]
+}
