@@ -1,0 +1,11 @@
+[
+  {
+    "id": 100,
+    "priority": 2,
+    "action": { "type": "block" },
+    "condition": {
+      "requestDomains": ["astronautlividlyreformer.com", "warkedmalie.com", "displayendpointstarring.com"],
+      "resourceTypes": ["main_frame", "sub_frame", "script", "xmlhttprequest", "image", "ping", "other"]
+    }
+  }
+]
